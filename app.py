@@ -1,3 +1,4 @@
+from flask_sqlalchemy import SQLAlchemy
 from multiprocessing.util import debug
 from flask import Flask
 from markupsafe import escape
@@ -9,6 +10,7 @@ import sub
 
 
 app = Flask(__name__)
+db = SQLAlchemy(app)
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config['SECRET_KEY'] = "a csrf secret key"
 
